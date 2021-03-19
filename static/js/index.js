@@ -4,12 +4,14 @@ function LED1_On() {
 	alert("led on");
 	console.log("led on");
 	document.getElementById("sensor").innerHTML="led on";
+	message = new Paho.MQTT.Message("ENCENDER");
   
 }
 function LED1_Off(){	
 	alert("led off");
 	console.log("led off");
 	document.getElementById("sensor").innerHTML="led off";
+	message = new Paho.MQTT.Message("APAGAR");
 }
 
 
