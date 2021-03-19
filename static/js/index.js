@@ -4,14 +4,22 @@ function LED1_On() {
 	alert("led on");
 	console.log("led on");
 	document.getElementById("sensor").innerHTML="led on";
-	message = new Paho.MQTT.Message("ENCENDER");
+	client.subscribe("klay-2000@outlook.com/tema1");
+   	 message = new Paho.MQTT.Message("ENCENDER");
+    	message.destinationName = "klay-2000@outlook.com/tema1";
+    	client.send(message);
+	
   
 }
 function LED1_Off(){	
 	alert("led off");
 	console.log("led off");
 	document.getElementById("sensor").innerHTML="led off";
-	message = new Paho.MQTT.Message("APAGAR");
+	client.subscribe("klay-2000@outlook.com/tema1");
+   	 message = new Paho.MQTT.Message("APAGAR");
+    	message.destinationName = "klay-2000@outlook.com/tema1";
+    	client.send(message);
+	
 }
 
 
