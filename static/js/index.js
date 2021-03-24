@@ -1,21 +1,13 @@
 //https://www.eclipse.org/paho/clients/js/
 
-function LED1_On(messagenew) {
+function LED1_On() {
 	alert("led on");
 	console.log("led on");
-	mensaje = messagenew.payloadString;
-	alert(mensaje);
-	if(messagenew.payloadString == "ENCENDIDO"){
-		client.subscribe("klay-2000@outlook.com/tema1");
-   	 	message = new Paho.MQTT.Message("apagar");
-    		message.destinationName = "klay-2000@outlook.com/tema1";
-    		client.send(message);
-	} else if (document.getElementById("sensor") == "APAGADO"){
-		client.subscribe("klay-2000@outlook.com/tema1");
-   	 	message = new Paho.MQTT.Message("encender");
-    		message.destinationName = "klay-2000@outlook.com/tema1";
-    		client.send(message); 
-	} 
+	document.getElementById("sensor").innerHTML="led on";
+	client.subscribe("klay-2000@outlook.com/tema1");
+   	 message = new Paho.MQTT.Message("ENCENDER");
+    	message.destinationName = "klay-2000@outlook.com/tema1";
+    	client.send(message);
 	
   
 }
@@ -81,7 +73,6 @@ function LED1_Off(){
   // called when a message arrives
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
-	  LED1_On(message);
 	  document.getElementById("sensor").innerHTML=message.payloadString;
   }
   
