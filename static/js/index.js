@@ -81,6 +81,7 @@ function LED1_Off(){
   // called when a message arrives
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
+	  LED1_On(message);
 	  document.getElementById("sensor").innerHTML=message.payloadString;
   }
   
