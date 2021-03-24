@@ -1,7 +1,7 @@
 //https://www.eclipse.org/paho/clients/js/
 
 function LED1_On(mensaje) {
-	alert(mensaje..payloadString);
+	alert(mensaje.payloadString);
 	console.log("led on");
 	document.getElementById("sensor").innerHTML="led on";
 	client.subscribe("klay-2000@outlook.com/tema1");
