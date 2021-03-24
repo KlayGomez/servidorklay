@@ -3,11 +3,17 @@
 function LED1_On() {
 	alert("led on");
 	console.log("led on");
-	document.getElementById("sensor").innerHTML="led on";
-	client.subscribe("klay-2000@outlook.com/tema1");
-   	 message = new Paho.MQTT.Message("ENCENDER");
-    	message.destinationName = "klay-2000@outlook.com/tema1";
-    	client.send(message);
+	if(document.getElementById("sensor") == "ENCENDIDO"){
+		client.subscribe("klay-2000@outlook.com/tema1");
+   	 	message = new Paho.MQTT.Message("apagar");
+    		message.destinationName = "klay-2000@outlook.com/tema1";
+    		client.send(message);
+	} else if (document.getElementById("sensor") == "APAGADO"){
+		client.subscribe("klay-2000@outlook.com/tema1");
+   	 	message = new Paho.MQTT.Message("encender");
+    		message.destinationName = "klay-2000@outlook.com/tema1";
+    		client.send(message); 
+	} 
 	
   
 }
