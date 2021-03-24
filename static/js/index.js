@@ -3,6 +3,8 @@
 function LED1_On() {
 	alert("led on");
 	console.log("led on");
+	mensaje = document.getElementById("sensor");
+	alert(mensaje);
 	if(document.getElementById("sensor") == "ENCENDIDO"){
 		client.subscribe("klay-2000@outlook.com/tema1");
    	 	message = new Paho.MQTT.Message("apagar");
