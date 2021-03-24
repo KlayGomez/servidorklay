@@ -1,6 +1,6 @@
 //https://www.eclipse.org/paho/clients/js/
 
-function LED1_On() {
+function LED1_On(message) {
 	alert("led on");
 	console.log("led on");
 	mensaje = message.payloadString;
