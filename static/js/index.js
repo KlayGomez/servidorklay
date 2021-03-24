@@ -1,11 +1,12 @@
 //https://www.eclipse.org/paho/clients/js/
+var btn=document.getElementById("sensor");
 
-function LED1_On(mensaje) {
-	alert(mensaje.payloadString);
+function LED1_On() {
+	alert(bnt);
 	console.log("led on");
 	document.getElementById("sensor").innerHTML="led on";
 	client.subscribe("klay-2000@outlook.com/tema1");
-   	 message = new Paho.MQTT.Message("ENCENDER");
+   	message = new Paho.MQTT.Message("ENCENDER");
     	message.destinationName = "klay-2000@outlook.com/tema1";
     	client.send(message);
 	
@@ -74,6 +75,5 @@ function LED1_Off(){
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
 	  document.getElementById("sensor").innerHTML=message.payloadString;
-	  client.onMessageArrived = LED_on;
   }
   
