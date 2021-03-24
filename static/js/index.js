@@ -1,11 +1,11 @@
 //https://www.eclipse.org/paho/clients/js/
 
-function LED1_On(message) {
+function LED1_On(messagenew) {
 	alert("led on");
 	console.log("led on");
-	mensaje = message.payloadString;
+	mensaje = messagenew.payloadString;
 	alert(mensaje);
-	if(message.payloadString == "ENCENDIDO"){
+	if(messagenew.payloadString == "ENCENDIDO"){
 		client.subscribe("klay-2000@outlook.com/tema1");
    	 	message = new Paho.MQTT.Message("apagar");
     		message.destinationName = "klay-2000@outlook.com/tema1";
