@@ -2,7 +2,7 @@
 var btn=document.getElementById("sensor");
 
 function LED1_On() {
-	alert(bnt);
+	alert(btn);
 	console.log("led on");
 	document.getElementById("sensor").innerHTML="led on";
 	client.subscribe("klay-2000@outlook.com/tema1");
