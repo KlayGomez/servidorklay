@@ -1,5 +1,5 @@
 //https://www.eclipse.org/paho/clients/js/
-var btn=document.getElementById("sensor");
+var btn;
 
 function LED1_On() {
 	alert(btn.payloadString);
@@ -74,6 +74,7 @@ function LED1_Off(){
   // called when a message arrives
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
+	  bnt = message.message.payloadString;
 	  document.getElementById("sensor").innerHTML=message.payloadString;
   }
   
