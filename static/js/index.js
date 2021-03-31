@@ -1,23 +1,31 @@
 //https://www.eclipse.org/paho/clients/js/
 let estado_led;
 function LED1_On() {
-	alert( estado_led);
-	console.log( estado_led);
-	if( estado_led == "ENCENDIDO"){
-		client.subscribe("klay-2000@outlook.com/tema1");
-   	 	message = new Paho.MQTT.Message("apagar");
-    		message.destinationName = "klay-2000@outlook.com/tema1";
-    		client.send(message);
-	} else if ( estado_led == "APAGADO"){
-		client.subscribe("klay-2000@outlook.com/tema1");
-   	 	message = new Paho.MQTT.Message("encender");
-    		message.destinationName = "klay-2000@outlook.com/tema1";
-    		client.send(message); 
-	} 
+	client.subscribe("klay-2000@outlook.com/tema1");
+   	message = new Paho.MQTT.Message("historial");
+    	message.destinationName = "klay-2000@outlook.com/tema1";
+    	client.send(message);
+	
 
 
 }
+//function LED1_On() {
+//	alert( estado_led);
+//	console.log( estado_led);
+//	if( estado_led == "ENCENDIDO"){
+//		client.subscribe("klay-2000@outlook.com/tema1");
+  // 	 	message = new Paho.MQTT.Message("apagar");
+    //		message.destinationName = "klay-2000@outlook.com/tema1";
+    //		client.send(message);
+//	} else if ( estado_led == "APAGADO"){
+//		client.subscribe("klay-2000@outlook.com/tema1");
+  // 	 	message = new Paho.MQTT.Message("encender");
+    //		message.destinationName = "klay-2000@outlook.com/tema1";
+    //		client.send(message); 
+//	} 
 
+
+//}
 
 
 // Create a client instance
