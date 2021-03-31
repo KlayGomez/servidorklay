@@ -67,6 +67,6 @@ function LED1_On() {
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
 	  estado_led = message.payloadString;
-	  document.getElementById("sensor").innerHTML=message.payloadString;
+	  document.getElementById("sensor").innerHTML=message.payloadString + "<br>";
   }
   
